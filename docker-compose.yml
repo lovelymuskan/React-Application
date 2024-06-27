@@ -1,0 +1,19 @@
+services:
+  reactjs:
+    # Build configuration for Strapi service
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: react-js-master
+    image: react-js
+    restart: on-failure
+    ports:
+      - "3000:3000"
+    # Networking configuration for Strapi service
+    networks:
+      - reactjs
+networks:
+  reactjs:
+  # Definition of Strapi network
+    name: Reactjs
+    driver: bridge
