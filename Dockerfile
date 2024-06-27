@@ -5,6 +5,7 @@ RUN npm install
 COPY . ./
 RUN npm run build
 
+
 FROM node:alpine
 RUN npm install -g serve
 WORKDIR /opt/app
